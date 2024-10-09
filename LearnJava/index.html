@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>Learn Java</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
+		<link rel="stylesheet" href="res/css/main.css">
+		<script>
+			function afterLoad () {
+				document.getElementById('loader').classList.add('hide');
+
+				const faders = Array.from(document.querySelectorAll('.fade-in-items'));
+
+				faders.forEach(elem => {
+					elem.classList.add('play');
+				});
+			}
+		</script>
+		<script type="module" src="res/js/main.js"></script>
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="module-container"></div>
+			<div id="content">
+				<h1 class="fade-in-items">Welcome to Your Java Learning Journey!</h1>
+				<div class="fade-in-items">
+					<div id="intro-content">Ready to dive into the world of Java programming? Java is one of the most widely-used programming languages, powering everything from apps to large enterprise systems. This platform will guide you through the essentials of Java with simple lessons, hands-on examples, and quizzes to help you master each topic.</div>
+				</div>
+			</div>
+		</div>
+		<div id="loader"></div>
+	</body>
+</html>

@@ -106,7 +106,6 @@ body {
 	color: #ffffff;
 	font-size: 1.2rem;
 	line-height: 1.3rem;
-	text-indent: 60px;
 	text-align: justify;
 }
 
@@ -172,7 +171,6 @@ body {
 
 	.card-cont p {
 		text-align: center;
-		text-indent: 0px;
 	}
 
 	.card-cont h1 {

@@ -85,4 +85,20 @@ function init () {
 	window.addEventListener('resize', resize);
 }
 
-window.addEventListener('load', init);
+function applyAnimation () {
+	const fadeInItems = document.querySelectorAll('.fade-in-items');
+	const animation = window.innerWidth <= 600 ? 'fade-in-no-rot 1.5s linear 1' : 'fade-in 1.5s linear 1';
+	
+	fadeInItems.forEach(item => {
+		item.style.animation = animation;
+	});
+}
+
+window.addEventListener('load', () => {
+	init();
+	applyAnimation();
+
+	document.getElementById('start-btn').addEventListener('click', () => {
+		window.location.replace('pages/first.html');
+	});
+});

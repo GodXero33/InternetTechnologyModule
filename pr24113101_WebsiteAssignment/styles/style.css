@@ -291,6 +291,176 @@ section {
 	max-width: 100%;
 }
 
+@scope (#third-section) {
+	:scope {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	:scope > div {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 50%;
+	}
+
+	:scope > div:first-child {
+		flex-grow: 1;
+	}
+
+	:scope > div:last-child {
+		flex-grow: 0;
+		flex-shrink: 1;
+		height: auto;
+		align-self: center;
+	}
+
+	:scope > div:first-child > div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+		aspect-ratio: 1 / 1;
+		transform: translate(-50%, -50%);
+		background-color: #fcf;
+		border-radius: 50%;
+	}
+
+	:scope > div:first-child > div > div:not(.card) {
+		position: absolute;
+		top: -3rem;
+		left: 0;
+		width: 100%;
+		height: calc(100% + 3rem);
+		background-image: url(../img/section3-hero.png);
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: 0 0 50% 50% / 0 0 calc(50% - 1.5rem) calc(50% - 1.5rem);
+	}
+
+	:scope > div:first-child > div > div.card {
+		position: absolute;
+		padding: 0.5rem;
+		width: fit-content;
+		height: fit-content;
+		background-color: #fff;
+		border-radius: 1rem;
+		text-align: center;
+	}
+
+	:scope > div:first-child > div > div.card div {
+		position: relative;
+		top: 0;
+		left: 50%;
+		width: 70%;
+		aspect-ratio: 1 / 1;
+		background-color: #fde2ac;
+		background-position: center center;
+		background-size: 60% 60%;
+		background-repeat: no-repeat;
+		transform: translateX(-50%);
+		border-radius: 50%;
+	}
+
+	:scope > div:first-child > div > div:nth-child(3).card {
+		top: 40%;
+		left: -2rem;
+	}
+
+	:scope > div:first-child > div > div:nth-child(4).card {
+		top: 25%;
+		right: -2rem;
+	}
+
+	:scope > div:first-child > div > div:nth-child(5).card {
+		padding: 0.6rem;
+		top:  calc(80% + 0.6rem);
+		left: 65%;
+		font-weight: 900;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.2rem;
+	}
+
+	:scope > div:first-child > div > div:nth-child(3).card div {
+		background-image: url(../img/heart.png);
+	}
+
+	:scope > div:first-child > div > div:nth-child(4).card div {
+		background-image: url(../img/basket-picnic.png);
+	}
+
+	:scope > div:first-child > div > div:nth-child(5).card div {
+		background-color: transparent;
+		background-image: url(../img/kimono.png);
+		background-size: cover;
+	}
+
+	:scope > div:first-child > div > div.card h1 {
+		font-size: 1.3rem;
+		color: #fa3;
+	}
+
+	:scope > div:first-child > div > div.card p {
+		margin: 0;
+		margin-top: 0.4rem;
+		font-size: 1rem;
+		color: #454545;
+	}
+
+	:scope > div:first-child > div > div:nth-child(5).card div {
+		left: 0;
+		transform: none;
+		height: 2.4rem;
+		width: 2.4rem;
+	}
+
+	:scope > div:first-child > div > div:nth-child(5).card p {
+		margin-top: 0;
+	}
+
+	h2 {
+		font-size: min(calc(0.5rem + 2vw), 2rem);
+		font-family: Aileron;
+		color: #a39;
+		letter-spacing: 0.5rem;
+	}
+
+	h1 {
+		font-size: min(calc(1rem + 5vw), 2.5rem);
+		font-family: Aileron;
+		color: #585858;
+	}
+
+	p {
+		margin-top: 2rem;
+		font-size: min(calc(0.5rem + 2vw), 1.2rem);
+		font-family: Aileron;
+	}
+}
+
+@scope (#forth-section) {
+	h1 {
+		position: relative;
+		font-size: min(calc(1rem + 5vw), 2.5rem);
+		color: #454545;
+		font-family: Aileron;
+	}
+
+	h1:after {
+		content: '';
+		position: absolute;
+		top: -0.35rem;
+		left: 0;
+		width: max(10%, 2rem);
+		height: 0.7rem;
+		background-color: #fa3;
+		border-radius: 0.35rem;
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	#header-hero div {
 		border-radius: 50% 0 0 50% / 50% 0 0 50%;
@@ -307,6 +477,26 @@ section {
 
 	#category-card-cont > div {
 		width: 30%;
+	}
+
+	@scope (#third-section) {
+		:scope {
+			flex-direction: column;
+		}
+
+		:scope > div {
+			width: 100%;
+			height: fit-content;
+		}
+
+		:scope > div:first-child {
+			height: calc(50vh - 60px - 2.5rem);
+		}
+
+		:scope > div:first-child > div {
+			width: auto;
+			height: 80%;
+		}
 	}
 }
 

@@ -1,0 +1,480 @@
+:root {
+	--font-size: 18px;
+	--sidebar-width: calc(var(--font-size) * 15);
+	--sidebar-hidden-width: calc(var(--font-size) * 1.8);
+	--cal-color-scrollbar: #aaaaaa;
+	--cal-color1: #54aeb3;
+	--cal-color2: #131313;
+	--cal-color3: #888888;
+	--cal-color4: #898989;
+	--cal-color5: #777777;
+	--cal-color6: #f3f3f3;
+	--cal-color7: #232323;
+	--cal-color8: #ffffff;
+	--cal-color9: #aaaaaa;
+	--cal-color10: #000000;
+	--cal-color11: #434343;
+	--cal-color12: #e2e2e2;
+	--cal-color13: #ffffff;
+	--cal-color14: #aaffff;
+	--cal-color15: #34e151;
+	--cal-color16: #57beda;
+	--cal-color17: #20a0c3;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+html {
+	font-size: var(--font-size);
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	height: 100svh;
+}
+
+body {
+	background-color: var(--cal-color9);
+}
+
+#main-container {
+	position: absolute;
+	margin-inline: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 900px;
+	overflow: hidden;
+	box-shadow: 0 0 5px #000;
+}
+
+#sidebar-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--sidebar-width);
+	height: 100%;
+	background-color: var(--cal-color2);
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+	transition: transform 0.1s linear;
+	box-shadow: 0 2px 5px #000;
+}
+
+#frame-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	isolation: isolate;
+}
+
+#sidebar-container > div {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#sidebar-container > div:first-child {
+	padding: 0.2rem;
+	height: fit-content;
+	display: flex;
+	border-bottom: 2px solid var(--cal-color3);
+}
+
+#sidebar-container > div:first-child h1 {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--sidebar-hidden-width);
+	font-size: 1.5rem;
+	text-align: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-image: linear-gradient(40deg, var(--cal-color4) 10%, var(--cal-color5), var(--cal-color6) 90%);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	transition: transform 0.2s linear;
+}
+
+#sidebar-toogle-btn {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: var(--sidebar-hidden-width);
+	aspect-ratio: 1 / 1;
+	background-color: var(--cal-color9);
+	background-image: url(../res/img/down-arrow.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 80% 80%;
+	filter: invert(100%);
+	transform: rotate(90deg) scale(0.8);
+	transition: transform 0.2s linear;
+	border-radius: 0.2rem;
+}
+
+#sidebar-toogle-btn input {
+	-webkit-appearance: none;
+	appearance: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+#sidebar-container > div:last-child {
+	padding-block: 0.5rem;
+	flex-grow: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--cal-color-scrollbar) transparent;
+}
+
+#sidebar-container .btn {
+	position: relative;
+	margin-top: 0.2rem;
+	padding-block: 0.2rem;
+	padding-inline: 0.6rem;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2rem;
+	background-color: var(--cal-color7);
+	font-size: 1.5rem;
+	color: var(--cal-color8);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	cursor: pointer;
+	font-size: 1.2rem;
+	transition: background-color 0.2s linear, transform 0.2s linear;
+}
+
+#sidebar-container .btn.active {
+	background-color: var(--cal-color9);
+	color: var(--cal-color10);
+}
+
+#frame-container .frame {
+	position: absolute;
+	top: 0;
+	left: var(--sidebar-hidden-width);
+	width: calc(100% - var(--sidebar-hidden-width));
+	height: 100%;
+	container: calculator-frame / inline-size;
+	background-color: var(--cal-color9);
+}
+
+#frame-container .frame.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#frame-container .frame > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#frame-container .frame > div > h1 {
+	position: relative;
+	padding: 0.5rem;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: var(--cal-color11);
+	font-size: 1.8rem;
+	text-align: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#frame-container .frame > div > div {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+@scope (#sidebar-container:has( input:checked)) {
+	:scope {
+		transform: translateX(calc(-100% + var(--sidebar-hidden-width)));
+		box-shadow: none !important;
+	}
+
+	:scope > div:first-child {
+		border-bottom: none !important;
+	}
+
+	:scope h1 {
+		transform: translateX(-100%);
+	}
+
+	#sidebar-toogle-btn {
+		left: 0.2rem;
+		top: 0.2rem;
+		transform: rotate(-90deg) scale(0.8);
+	}
+
+	:scope .btn {
+		transform: translateX(-100%);
+		pointer-events: none;
+	}
+}
+
+@scope (#simple-frame) {
+	#simple-answer-display {
+		position: relative;
+		margin-top: 2rem;
+		padding-inline: 0.5rem;
+		padding-block: 0.2rem;
+		top: 0;
+		left: 50%;
+		width: clamp(200px, 100%, 600px);
+		height: fit-content;
+		transform: translateX(-50%);
+		font-size: 1.3rem;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		color: var(--cal-color10);
+		text-align: center;
+	}
+
+	.card-container {
+		position: relative;
+		padding-top: 0.2rem;
+		padding-inline: 0.5rem;
+		top: 0;
+		left: 50%;
+		width: clamp(200px, 100%, 600px);
+		height: fit-content;
+		transform: translateX(-50%);
+		display: grid;
+		grid-template-columns: 10rem auto;
+		align-content: center;
+		align-items: center;
+	}
+
+	.card-container > div, .card-container input {
+		position: relative;
+		margin-top: 0.2rem;
+		top: 0;
+		left: 0;
+		padding: 0.4rem;
+		height: fit-content;
+		font-size: 1.2rem;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		border: 2px solid rgba(0, 0, 0, 0.6);
+		color: var(--cal-color10);
+		border-radius: 0.2rem;
+	}
+
+	.card-container > div:not(.radio-cont) {
+		background-color: var(--cal-color12);
+		text-align: right;
+	}
+
+	.radio-cont {
+		min-height: 100%;
+		margin-left: 0.2rem;
+		display: flex;
+		justify-content: space-evenly;
+		background-color: var(--cal-color13);
+	}
+
+	.radio-cont span {
+		margin-inline: 0.2rem;
+		display: block;
+		position: relative;
+	}
+
+	.radio-cont span div {
+		position: relative;
+		padding-inline: 0.5rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		border-radius: 0.2rem;
+		border: 2px solid transparent;
+		background-color: var(--cal-color12);
+	}
+
+	.radio-cont span input {
+		position: absolute;
+		margin: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.radio-cont span div:has( + input:checked) {
+		background-color: var(--cal-color14);
+		border: 2px solid #000;
+	}
+
+	.card-container input {
+		margin-left: 0.2rem;
+		background-color: var(--cal-color13);
+	}
+
+	button {
+		position: relative;
+		margin-top: 0.2rem;
+		top: 0;
+		left: 50%;
+		padding: 0.4rem;
+		height: fit-content;
+		font-size: 1.2rem;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		border: 2px solid rgba(0, 0, 0, 0.6);
+		color: var(--cal-color10);
+		transform: translateX(-50%);
+		background-color: var(--cal-color14);
+		cursor: pointer;
+		border-radius: 0.2rem;
+	}
+}
+
+@scope (#normal-frame) {
+	:scope > div {
+		position: relative;
+		margin-top: 1.5rem;
+		padding: 0.6rem;
+		top: 0;
+		left: 50%;
+		width: 100%;
+		height: fit-content;
+		max-width: 600px;
+		transform: translateX(-50%);
+	}
+
+	:scope > div h1 {
+		position: relative;
+		margin-bottom: 1rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		color: var(--cal-color7);
+		font-size: 1.5rem;
+		text-align: right;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+
+	:scope > div > div {
+		position: relative;
+		padding-block: 0.5rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		display: grid;
+		grid-template-columns: repeat(4, 25%);
+		gap: 0.4rem;
+	}
+
+	.btn {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2rem;
+		background-color: var(--cal-color8);
+		border-radius: 0.2rem;
+		cursor: pointer;
+		color: var(--cal-color7);
+		font-size: 1.3rem;
+		text-align: center;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-weight: 900;
+		display: grid;
+		place-items: center;
+		border: 2px solid transparent;
+	}
+
+	.backspace {
+		background-image: url(../res/img/backspace.png);
+		background-size: auto 80%;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-green {
+		background-color: var(--cal-color15);
+	}
+
+	.bg-blue {
+		background-color: var(--cal-color16);
+	}
+
+	.bg-deep-blue {
+		background-color: var(--cal-color17);
+	}
+
+	.spec {
+		filter: invert(100%);
+	}
+
+	.btn.active {
+		filter: brightness(80%);
+	}
+
+	@media (hover: hover) {
+		.btn:hover {
+			filter: brightness(90%);
+			border-color: #000000;
+		}
+	}
+}
+
+@container calculator-frame (max-width: 300px) {
+	@scope (#simple-frame) {
+		.card-container {
+			grid-template-columns: 100%;
+			justify-items: center;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		--font-size: 12px;
+	}
+}
+
+@media (hover: hover) {
+	#sidebar-container .btn:not(.active):hover {
+		background-color: hsl(from var(--cal-color7) h s calc(l * 2));
+	}
+}
+
+@media (hover: none) {
+	.btn {
+		-webkit-tap-highlight-color: transparent;
+	}
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>Template</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="js/main.js" defer></script>
+		<script type="text/javascript" src="js/sidebar.js" defer></script>
+		<script type="text/javascript" src="js/simplecal.js" defer></script>
+		<script type="text/javascript" src="js/normalcal.js" defer></script>
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="sidebar-container">
+				<div>
+					<h1>Calculator</h1>
+					<div id="sidebar-toogle-btn" title="menu">
+						<input type="checkbox" tabindex="1" checked>
+					</div>
+				</div>
+				<div>
+					<div class="btn active" tabindex="1">Simple</div>
+					<div class="btn" tabindex="1">Normal</div>
+					<div class="btn" tabindex="1">Advanced</div>
+					<div class="btn" tabindex="1">Date</div>
+					<div class="btn" tabindex="1">Temperature</div>
+				</div>
+			</div>
+			<div id="frame-container">
+				<div class="frame">
+					<div>
+						<h1>Simple Calculator</h1>
+						<div id="simple-frame">
+							<div id="simple-answer-display">2</div>
+							<div class="card-container">
+								<div>First Number</div>
+								<input type="number" id="simple-cal-num1" value="1.0">
+								<div>Operator</div>
+								<div class="radio-cont">
+									<span title="add">
+										<div>+</div>
+										<input type="radio" name="simple-radio" checked>
+									</span>
+									<span title="subtract">
+										<div>−</div>
+										<input type="radio" name="simple-radio">
+									</span>
+									<span title="multiply">
+										<div>×</div>
+										<input type="radio" name="simple-radio">
+									</span>
+									<span title="divide">
+										<div>÷</div>
+										<input type="radio" name="simple-radio">
+									</span>
+									<span title="percentage">
+										<div>%</div>
+										<input type="radio" name="simple-radio">
+									</span>
+								</div>
+								<div>Second Number</div>
+								<input type="number" id="simple-cal-num2" value="1.0">
+							</div>
+							<button id="simple-cal-btn">Calculate</button>
+						</div>
+					</div>
+				</div>
+				<div class="frame hide">
+					<div>
+						<h1>Normal Calculator</h1>
+						<div id="normal-frame">
+							<div>
+								<h1 id="normal-answer-display1">0</h1>
+								<h1 id="normal-answer-display2">0</h1>
+								<div>
+									<div class="btn spec">√</div>
+									<div class="btn spec">π</div>
+									<div class="btn spec">^</div>
+									<div class="btn spec">!</div>
+								</div>
+								<div>
+									<div class="btn bg-green">AC</div>
+									<div class="btn bg-blue">( )</div>
+									<div class="btn bg-blue">%</div>
+									<div class="btn bg-blue">÷</div>
+									<div class="btn">7</div>
+									<div class="btn">8</div>
+									<div class="btn">9</div>
+									<div class="btn bg-blue">×</div>
+									<div class="btn">4</div>
+									<div class="btn">5</div>
+									<div class="btn">6</div>
+									<div class="btn bg-blue">−</div>
+									<div class="btn">1</div>
+									<div class="btn">2</div>
+									<div class="btn">3</div>
+									<div class="btn bg-blue">+</div>
+									<div class="btn">0</div>
+									<div class="btn">.</div>
+									<div class="btn backspace"></div>
+									<div class="btn bg-deep-blue">=</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="frame hide">
+					<div>
+						<h1>Advanced Calculator</h1>
+						<div id="advanced-frame"></div>
+					</div>
+				</div>
+				<div class="frame hide">
+					<div>
+						<h1>Date Calculator</h1>
+						<div id="date-frame"></div>
+					</div>
+				</div>
+				<div class="frame hide">
+					<div>
+						<h1>Temperature Calculator</h1>
+						<div id="temperature-frame"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+:root {
+	--background: #000000;
+	--scrollbar: #ffffff;
+	--loader-bg: #000000;
+	--loader-spinner: #ffffff;
+	--text-v1: #ffffff;
+}
+
+@keyframes spinner {
+	to { transform: rotate(360deg); }
+}
+
+@font-face {
+	font-family: AileronLight;
+	src: url(../data/font/Aileron-Light.otf);
+}
+
+@font-face {
+	font-family: AileronRegular;
+	src: url(../data/font/Aileron-Regular.otf);
+}

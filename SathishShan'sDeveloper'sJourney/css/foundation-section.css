@@ -1,6 +1,4 @@
 #foundation-section {
-	--animation-duration: 2s;
-
 	canvas, .nodes-container {
 		position: absolute;
 		margin-inline: auto;

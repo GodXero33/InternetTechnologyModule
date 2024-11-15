@@ -11,10 +11,15 @@ function isRectLeavingViewPort (rect, dir) {
 
 function lockScroll () {
 	isScrollLocked = true;
+	COVER_CANVAS.scrollVelo = 10;
+
+	setTimeout(() => {
+		COVER_CANVAS.scrollVelo = 1;
+	}, 1000);
 
 	setTimeout(() => {
 		isScrollLocked = false;
-	}, 1100);
+	}, 2100);
 }
 
 function updateViewSection (index) {
@@ -24,14 +29,18 @@ function updateViewSection (index) {
 	sections[currentViewSection].classList.remove('hide');
 	leftNavBarDivs[currentViewSection].classList.add('active');
 	lockScroll();
+
+	COVER_CANVAS.updateColor(currentViewSection);
+
+	if (currentViewSection == sections.length - 1) {
+		CONTACT.focus();
+	} else {
+		CONTACT.blur();
+	}
 }
 
 function scrollHandle () {
 	const container = document.getElementById('main-container');
-
-	// sections.forEach(section => {
-	// 	section.style.backgroundColor = '#' + Math.floor(Math.random() * 255 ** 3).toString(16);
-	// });
 
 	function handleScrollIntent (event) {
 		event.preventDefault();
@@ -51,8 +60,6 @@ function scrollHandle () {
 			currentY = lastY - event.touches[0].clientY;
 			lastY = event.touches[0].clientY;
 		}
-
-		// if (sections[currentViewSection].scrollTop + window.innerHeight < sections[currentViewSection].scrollHeight - 10) return;
 
 		if (currentY > 0) { // Scrolling down
 			if (currentViewSection != sections.length - 1) {
@@ -81,26 +88,29 @@ function loaderHandle () {
 
 		document.getElementById('start-btn').addEventListener('click', () => {
 			document.getElementById('loader').classList.add('hide');
+			sections[0].classList.remove('hide');
+			COVER_CANVAS.init();
 
 			setTimeout(() => {
 				document.getElementById('loader').remove();
 			}, 1000);
 		}, { once: true });
 	}, 1000);
-	document.getElementById('loader').remove(); // remove later
+
 	loaderHandle = null;
 }
 
 function leftNavBarHandle () {
-	const leftNavBar = document.getElementById('left=nav-bar');
+	const leftNavBar = document.getElementById('left-nav-bar');
 
-	sections.forEach((section, index) => {
+	sections.forEach((_, index) => {
 		const div = document.createElement('div');
 		leftNavBarDivs.push(div);
 		leftNavBar.append(div);
 
 		if (index == 0) {
 			div.classList.add('active');
+			currentViewSection = index;
 		}
 
 		div.addEventListener('click', () => {
@@ -110,30 +120,31 @@ function leftNavBarHandle () {
 }
 
 function resizeHandle () {
-	// window.addEventListener('resize', () => {
-	// 	FOUNDATION.resize();
-	// });
+	window.addEventListener('resize', () => {
+		COVER_CANVAS.resize();
+	});
 
-	// resizeHandle = null;
+	COVER_CANVAS.resize();
+	resizeHandle = null;
 }
 
 function animationHandle () {
-	// function animate () {
-	// 	FOUNDATION.animate();
-	// 	window.requestAnimationFrame(animate);
-	// }
+	function animate () {
+		COVER_CANVAS.animate();
+		window.requestAnimationFrame(animate);
+	}
 
-	// animate();
+	animate();
 }
 
 window.addEventListener('load', () => {
 	sections = document.querySelectorAll('section');
 
-	loaderHandle();
 	leftNavBarHandle();
 	scrollHandle();
 	resizeHandle();
 	animationHandle();
+	loaderHandle();
 });
 
 window.addEventListener('contextmenu', (event) => {

@@ -7,10 +7,21 @@
 	--start-btn: #000000;
 	--start-btn-text: #ffffff;
 	--text-v1: #ffffff;
+	--text-v2: #1aff5b;
 }
 
 @keyframes spinner {
 	to { transform: rotate(360deg); }
+}
+
+@keyframes stretch_1 {
+	50% { transform: rotate(180deg) translateX(10%) scale(1.1); }
+	100% { transform: rotate(180deg) translateX(0) scale(1); }
+}
+
+@keyframes stretch_2 {
+	50% { transform: translateX(10%) scale(1.1); }
+	100% { transform: translateX(0) scale(1); }
 }
 
 @font-face {

@@ -27,7 +27,7 @@ body {
 	height: 100%;
 	background-color: var(--loader-bg);
 	transition: opacity 0.2s linear;
-	z-index: 200;
+	z-index: 201;
 }
 
 #loader.hide {
@@ -141,7 +141,7 @@ body {
 	perspective: 1200px;
 }
 
-#main-container > div:last-child {
+#main-container > div:nth-child(2) {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -154,7 +154,7 @@ body {
 	gap: calc(var(--left-nav-size) * 0.2);
 }
 
-#main-container > div:last-child div {
+#main-container > div:nth-child(2) div {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -168,9 +168,19 @@ body {
 	transition: background-color 0.4s linear, border-color 0.4s linear;
 }
 
-#main-container > div:last-child div.active {
+#main-container > div:nth-child(2) div.active {
 	border-color: #ff00ff;
 	background-color: #ffffff;
+}
+
+#cover-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 200;
+	pointer-events: none;
 }
 
 section {
@@ -178,7 +188,7 @@ section {
 	top: 0;
 	left: 0;
 	width: calc(100% - 2rem);
-	height: 100vh;
+	height: 100svh;
 	transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 	overflow: hidden;
 }
@@ -189,6 +199,10 @@ section.hide {
 	pointer-events: none;
 }
 
-section.hide:has( + section:not(.hide)) {
+section:not(.hide) + section.hide {
+	transform: scale(5);
+}
+
+section:last-child.hide {
 	transform: scale(5);
 }

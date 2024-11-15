@@ -1,30 +1,37 @@
+let sections;
+let currentViewSection = 0;
+let lastY = null;
+let isScrollLocked = false;
+const leftNavBarDivs = [];
+
 function isRectLeavingViewPort (rect, dir) {
 	if (dir == 1) return rect.top + rect.height <= window.innerHeight;
 	return rect.top + rect.height >= 0;
 }
 
-window.addEventListener('load', () => {
+function lockScroll () {
+	isScrollLocked = true;
+
 	setTimeout(() => {
-		document.getElementById('loader').classList.add('hide');
-	}, 1000);
+		isScrollLocked = false;
+	}, 1100);
+}
 
-	const sections = document.querySelectorAll('section');
+function updateViewSection (index) {
+	sections[currentViewSection].classList.add('hide');
+	leftNavBarDivs[currentViewSection].classList.remove('active');
+	currentViewSection = index;
+	sections[currentViewSection].classList.remove('hide');
+	leftNavBarDivs[currentViewSection].classList.add('active');
+	lockScroll();
+}
+
+function scrollHandle () {
 	const container = document.getElementById('main-container');
-	let currentViewSection = 0;
-	let lastY = null;
-	let isScrollLocked = false;
 
-	sections.forEach(section => {
-		section.style.backgroundColor = '#' + Math.floor(Math.random() * 255 ** 3).toString(16);
-	});
-
-	function lockScroll () {
-		isScrollLocked = true;
-
-		setTimeout(() => {
-			isScrollLocked = false;
-		}, 1100);
-	}
+	// sections.forEach(section => {
+	// 	section.style.backgroundColor = '#' + Math.floor(Math.random() * 255 ** 3).toString(16);
+	// });
 
 	function handleScrollIntent (event) {
 		event.preventDefault();
@@ -49,17 +56,11 @@ window.addEventListener('load', () => {
 
 		if (currentY > 0) { // Scrolling down
 			if (currentViewSection != sections.length - 1) {
-				sections[currentViewSection].classList.add('hide');
-				currentViewSection++;
-				sections[currentViewSection].classList.remove('hide');
-				lockScroll();
+				updateViewSection(currentViewSection + 1);
 			}
 		} else if (currentY < 0) { // Scrolling up
 			if (currentViewSection != 0) {
-				sections[currentViewSection].classList.add('hide');
-				currentViewSection--;
-				sections[currentViewSection].classList.remove('hide');
-				lockScroll();
+				updateViewSection(currentViewSection - 1);
 			}
 		}
 	}
@@ -72,6 +73,67 @@ window.addEventListener('load', () => {
 	container.addEventListener('touchmove', handleScrollIntent);
 	container.addEventListener('touchend', resetTouchPosition);
 	container.addEventListener('touchcancel', resetTouchPosition);
+}
+
+function loaderHandle () {
+	setTimeout(() => {
+		document.getElementById('loader').classList.add('start');
+
+		document.getElementById('start-btn').addEventListener('click', () => {
+			document.getElementById('loader').classList.add('hide');
+
+			setTimeout(() => {
+				document.getElementById('loader').remove();
+			}, 1000);
+		}, { once: true });
+	}, 1000);
+	document.getElementById('loader').remove(); // remove later
+	loaderHandle = null;
+}
+
+function leftNavBarHandle () {
+	const leftNavBar = document.getElementById('left=nav-bar');
+
+	sections.forEach((section, index) => {
+		const div = document.createElement('div');
+		leftNavBarDivs.push(div);
+		leftNavBar.append(div);
+
+		if (index == 0) {
+			div.classList.add('active');
+		}
+
+		div.addEventListener('click', () => {
+			updateViewSection(index);
+		});
+	});
+}
+
+function resizeHandle () {
+	// window.addEventListener('resize', () => {
+	// 	FOUNDATION.resize();
+	// });
+
+	// resizeHandle = null;
+}
+
+function animationHandle () {
+	// function animate () {
+	// 	FOUNDATION.animate();
+	// 	window.requestAnimationFrame(animate);
+	// }
+
+	// animate();
+}
+
+window.addEventListener('load', () => {
+	sections = document.querySelectorAll('section');
+
+	loaderHandle();
+	leftNavBarHandle();
+	scrollHandle();
+	resizeHandle();
+	animationHandle();
 });
 
 window.addEventListener('contextmenu', (event) => {

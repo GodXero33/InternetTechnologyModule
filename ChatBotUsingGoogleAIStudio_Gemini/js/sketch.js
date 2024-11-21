@@ -1,9 +1,15 @@
 (function (exports) {
-	const CHAT_DATA = [];
+	const CHAT_DATA = [
+		{
+			message: "Hello! This AI is created by GodXero and is specifically designed to assist with child care. The AI should always communicate in a friendly, warm, and approachable tone to ensure it feels safe and inviting. Responses must be short, simple, and tailored to child care topics, avoiding any mention of coding, technical details, or lengthy explanations. If someone asks 'Who are you?', the AI should respond clearly and concisely with just 'GodXero.' The goal is to create a conversational experience that feels supportive, kind, and easy to understand, ensuring all interactions are helpful and engaging for users."
+		}
+	];
 
 	let messageContainer = null;
 	let messageInput = null;
 	let senderSelecters = null;
+	let isShiftOnInputDown = false;
+	let bubblePopSound = null;
 	let mdConverter = new showdown.Converter();
 
 	function requestFromGoogleAIStudio () {
@@ -97,6 +103,8 @@
 
 		messageContainer.appendChild(boxDiv);
 		messageContainer.scrollTop = messageContainer.scrollHeight;
+		bubblePopSound.currentTime = 0;
+		bubblePopSound.play();
 	}
 
 	function sendMessage () {
@@ -117,21 +125,34 @@
 		senderSelecters[0].checked = true;
 	}
 
-	function init () {
-		messageContainer = document.getElementById('chat-content');
-		messageInput = document.getElementById('message-input');
-		senderSelecters = Array.from(document.getElementById('sender-selection-container').querySelectorAll('input[type="radio"]'));
-
+	function initEventListeners () {
 		messageInput.addEventListener('keydown', (event) => {
-			if (event.code == 'Enter') sendMessage();
+			if (event.code == 'Enter' && !isShiftOnInputDown) {
+				sendMessage();
+			} else if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
+				isShiftOnInputDown = true;
+			}
+		});
+
+		messageInput.addEventListener('keyup', (event) => {
+			if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') isShiftOnInputDown = false;
 		});
 
 		document.getElementById('send-btn').addEventListener('click', sendMessage);
 
-		senderSelecters[0].addEventListener('click', () => {
-			senderSelecters[1].checked = true;
+		window.addEventListener('resize', () => {
+			messageContainer.scrollTop = messageContainer.scrollHeight;
 		});
+	}
 
+	function init () {
+		messageContainer = document.getElementById('chat-content');
+		messageInput = document.getElementById('message-input');
+		senderSelecters = Array.from(document.getElementById('sender-selection-container').querySelectorAll('input[type="radio"]'));
+		bubblePopSound = document.getElementById('bubble-pop');
+		bubblePopSound.volume = 0.2;
+
+		initEventListeners();
 		messageInput.focus();
 	}
 

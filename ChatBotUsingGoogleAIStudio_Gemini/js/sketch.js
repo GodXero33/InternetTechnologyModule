@@ -16,7 +16,7 @@
 
 		return new Promise(async (req, rej) => {
 			try {
-				const key = 'AIzaSyAGx10vO2eA0KqQJ-AfF6rTWerES7FE218';
+				const key = 'MY_KEY';
 				const response = await fetch(
 					'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + key,
 					{

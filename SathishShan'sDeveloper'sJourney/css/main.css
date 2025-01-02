@@ -1,0 +1,208 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+html {
+	font-size: 18px;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	height: 100svh;
+}
+
+body {
+	background-color: var(--background);
+}
+
+#loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--loader-bg);
+	transition: opacity 0.2s linear;
+	z-index: 201;
+}
+
+#loader.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+ #loader > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--loader-bg);
+	display: grid;
+	justify-items: center;
+	align-content: center;
+	transition: opacity 0.2s linear;
+ }
+
+ #loader > div:last-child {
+	opacity: 0;
+	pointer-events: none;
+ }
+ 
+ #loader.start > div:first-child {
+	opacity: 0;
+ }
+
+ #loader.start > div:last-child {
+	opacity: 1;
+	pointer-events: all;
+ }
+
+#loader > div:first-child div:first-child, #loader > div:first-child div:nth-child(2) {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 800px;
+	text-align: center;
+	color: var(--text-v1);
+	font-family: AileronRegular;
+}
+
+#loader > div:first-child div:first-child {
+	font-size: clamp(0.6rem, 5vw, 2rem);
+}
+
+#loader > div:first-child div:nth-child(2) {
+	font-size: clamp(0.6rem, 4vw, 1.2rem);
+}
+
+#loader > div:first-child div:last-child {
+	--size: clamp(0.6rem, 4vw, 1.2rem);
+	top: 0;
+	left: 0;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	border-width: calc(var(--size) * 0.2);
+	border-style: solid;
+	border-inline-color: var(--loader-spinner);
+	border-block-color: transparent;
+}
+
+#loader:not(.hide) > div:first-child div:last-child {
+	animation-name: spinner;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+#start-btn {
+	position: relative;
+	padding: 0.5rem;
+	top: 0;
+	left: 0;
+	width: fit-content;
+	height: fit-content;
+	background-color: var(--start-btn);
+	color: var(--start-btn-text);
+	font-family: AileronRegular;
+	font-size: clamp(0.6rem, 4vw, 1.2rem);
+	border: 0.2rem solid var(--start-btn-text);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+#main-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	scrollbar-color: var(--scrollbar) transparent;
+}
+
+#main-container > div:first-child {
+	position: absolute;
+	margin-inline: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: fit-content;
+	max-width: 1920px;
+	perspective: 1200px;
+}
+
+#main-container > div:nth-child(2) {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: var(--left-nav-size);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: calc(var(--left-nav-size) * 0.2);
+}
+
+#main-container > div:nth-child(2) div {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: calc(var(--left-nav-size) * 0.5);
+	height: calc(var(--left-nav-size) * 0.5);
+	background-color: green;
+	border-radius: 50%;
+	cursor: pointer;
+	border: calc(var(--left-nav-size) * 0.1) solid #ffffff;
+	background-color: #000000;
+	transition: background-color 0.4s linear, border-color 0.4s linear;
+}
+
+#main-container > div:nth-child(2) div.active {
+	border-color: #ff00ff;
+	background-color: #ffffff;
+}
+
+#cover-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 200;
+	pointer-events: none;
+}
+
+section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 2rem);
+	height: 100svh;
+	transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+	overflow: hidden;
+}
+
+section.hide {
+	transform: scale(0);
+	opacity: 0;
+	pointer-events: none;
+}
+
+section:not(.hide) + section.hide {
+	transform: scale(5);
+}
+
+section:last-child.hide {
+	transform: scale(5);
+}

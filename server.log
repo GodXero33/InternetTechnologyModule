@@ -1,0 +1,65 @@
+Starting up http-server, serving ./
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: true
+Cache: -1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://192.168.8.159:8080
+  http://127.0.0.1:8080
+Hit CTRL-C to stop the server
+
+[Tue Dec 24 2024 11:08:28 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+(node:34396) [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[Tue Dec 24 2024 11:08:28 GMT+0530 (India Standard Time)]  "GET /favicon.ico" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:28 GMT+0530 (India Standard Time)]  "GET /favicon.ico" Error (404): "Not found"
+[Tue Dec 24 2024 11:08:29 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:30 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:30 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:32 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:33 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:33 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:33 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:33 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/css/main.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img1.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img2.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img3.avif" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img4.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img5.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img6.jpg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img7.jpg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img8.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img9.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img10.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img11.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img12.jpeg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:34 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/font/CampenoRoundedVintage.otf" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/css/main.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img1.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img2.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img3.avif" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img4.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img5.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img6.jpg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img7.jpg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img8.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img9.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img10.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img11.webp" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/img/img12.jpeg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+[Tue Dec 24 2024 11:08:35 GMT+0530 (India Standard Time)]  "GET /TheWorldOfRobotics/font/CampenoRoundedVintage.otf" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"

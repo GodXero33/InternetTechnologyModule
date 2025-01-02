@@ -1,0 +1,246 @@
+:root {
+	--background-color: #007693;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: GlacialIndifference;
+	src: url(../data/font/GlacialIndifference-Regular.otf);
+}
+
+@keyframes chat-bubble {
+	from {
+		transform: translateY(-10%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+html {
+	font-size: 18px;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	height: 100svh;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+#main-container {
+	position: absolute;
+	margin-inline: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+}
+
+#main-container > div {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+
+#sender-selection-container {
+	& {
+		padding: 0.5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 0.5rem;
+		box-shadow: 0 0 5px #000000;
+		z-index: 1;
+	}
+
+	.sender {
+		--size: clamp(1.5rem, 8vw, 2.5rem);
+		position: relative;
+		padding-block: 0.2rem;
+		padding-inline: 0.5rem;
+		top: 0;
+		left: 0;
+		width: var(--size);
+		height: var(--size);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		transition: transform 0.1s linear;
+		border-radius: 50%;
+		opacity: 0.4;
+	}
+
+	.sender:first-child {
+		background-image: url(../data/img/profile_1.png);
+	}
+
+	.sender:last-child {
+		background-image: url(../data/img/profile_2.jpg);
+	}
+
+	input {
+		-webkit-appearance: none;
+		appearance: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		pointer-events: none;
+	}
+
+	.sender:has(input:checked) {
+		transform: scale(1.1);
+		opacity: 1;
+		box-shadow: 0 0 5px #000000;
+	}
+}
+
+#chat-content-container {
+	& {
+		flex-grow: 1;
+		background-image: url(../data/img/chat-background.jpg);
+		background-repeat: repeat;
+		background-size: cover;
+	}
+
+	#chat-content {
+		position: absolute;
+		margin-inline: auto;
+		padding: 0.5rem;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		max-width: 1200px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: #82cfe4 transparent;
+		scroll-behavior: smooth;
+	}
+
+	.message-box {
+		position: relative;
+		margin-block: 1rem;
+		padding: 0.5rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba(38, 128, 255, 1);
+		border-radius: 0.5rem;
+		box-shadow: 0 0 2px #000000;
+		animation: chat-bubble 0.2s ease 1;
+	}
+
+	.time {
+		margin-block: 0.2rem;
+		color: #ffffff;
+		font-size: clamp(0.6rem, 2vw, 0.8rem);
+		font-family: GlacialIndifference;
+	}
+
+	.message {
+		margin-block: 0.2rem;
+		color: #ffffff;
+		font-size: clamp(0.8rem, 2vw, 1rem);
+		font-family: GlacialIndifference;
+	}
+
+	.message-box.second {
+		max-width: 500px;
+		margin-left: auto;
+		right: 0;
+		background-color: rgba(35, 215, 255, 1);
+	}
+
+	.message-box.second .message {
+		text-align: right;
+	}
+}
+
+#chat-controls-container {
+	& {
+		padding: 0.5rem;
+		height: fit-content;
+		display: flex;
+		gap: 0.5rem;
+		justify-content: center;
+		box-shadow: 0 0 5px #000000;
+		z-index: 1;
+	}
+
+	input {
+		position: relative;
+		padding: 0.5rem;
+		top: 0;
+		left: 0;
+		max-width: 1100px;
+		background-color: #81e4ff;
+		color: #000000;
+		font-size: clamp(0.7rem, 2vw, 1rem);
+		font-family: GlacialIndifference;
+		border: none;
+		outline: none;
+		flex-grow: 1;
+		border-radius: 0.5rem;
+		border: 2px solid #000000;
+		transition: border-color 0.3s linear, background-color 0.3s linear, color 0.3s linear;
+	}
+
+	input:focus {
+		background-color: #efefef;
+		color: #232323;
+		border-color: #adadad;
+	}
+
+	button {
+		-webkit-appearance: none;
+		appearance: none;
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		aspect-ratio: 2 / 1;
+		background-color: #81e4ff;
+		flex-shrink: 0;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		border-radius: 0.5rem;
+		background-image: url(../data/img/paper-plane.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: auto 80%;
+		transition: background-color 0.3s linear;
+		border: 2px solid #000000;
+	}
+
+	button:hover {
+		background-color: #e4e4e4;
+	}
+}
+
+#resources {
+	display: none;
+}

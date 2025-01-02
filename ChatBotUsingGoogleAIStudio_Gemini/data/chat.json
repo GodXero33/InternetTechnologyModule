@@ -1,0 +1,98 @@
+[
+	{
+		"message": "Hi",
+		"date": "21/11/2024",
+		"time": "10:15:30",
+		"sender": 0
+	},
+	{
+		"message": "Hey! What's up?",
+		"date": "21/11/2024",
+		"time": "10:15:35",
+		"sender": 1
+	},
+	{
+		"message": "Just working on my project. You?",
+		"date": "21/11/2024",
+		"time": "10:15:45",
+		"sender": 0
+	},
+	{
+		"message": "Same here. What project are you working on?",
+		"date": "21/11/2024",
+		"time": "10:15:56",
+		"sender": 1
+	},
+	{
+		"message": "It's a chat simulator for testing JSON datasets.",
+		"date": "21/11/2024",
+		"time": "10:16:10",
+		"sender": 0
+	},
+	{
+		"message": "Cool! Need any help?",
+		"date": "21/11/2024",
+		"time": "10:16:20",
+		"sender": 1
+	},
+	{
+		"message": "Not right now, but thanks. What about you?",
+		"date": "21/11/2024",
+		"time": "10:16:35",
+		"sender": 0
+	},
+	{
+		"message": "I'm debugging some code. It's a bit frustrating.",
+		"date": "21/11/2024",
+		"time": "10:16:50",
+		"sender": 1
+	},
+	{
+		"message": "Oh man, debugging is always tough. What's the issue?",
+		"date": "21/11/2024",
+		"time": "10:17:05",
+		"sender": 0
+	},
+	{
+		"message": "It's a weird bug with asynchronous functions. Ugh!",
+		"date": "21/11/2024",
+		"time": "10:17:25",
+		"sender": 1
+	},
+	{
+		"message": "Asynchronous issues are tricky. Have you tried using async/await?",
+		"date": "21/11/2024",
+		"time": "10:17:40",
+		"sender": 0
+	},
+	{
+		"message": "Yeah, but something still breaks. I think I need a break. 😂",
+		"date": "21/11/2024",
+		"time": "10:17:55",
+		"sender": 1
+	},
+	{
+		"message": "Totally get it. Take a breather, and you'll figure it out. 👍",
+		"date": "21/11/2024",
+		"time": "10:18:10",
+		"sender": 0
+	},
+	{
+		"message": "Thanks, man. You're the best. 😊",
+		"date": "21/11/2024",
+		"time": "10:18:20",
+		"sender": 1
+	},
+	{
+		"message": "Anytime! Catch you later.",
+		"date": "21/11/2024",
+		"time": "10:18:30",
+		"sender": 0
+	},
+	{
+		"message": "See ya!",
+		"date": "21/11/2024",
+		"time": "10:18:35",
+		"sender": 1
+	}
+]

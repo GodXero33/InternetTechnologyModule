@@ -1,0 +1,89 @@
+#foundation-section {
+	canvas, .nodes-container {
+		position: absolute;
+		margin-inline: auto;
+		padding: 0.5rem;
+		top: 40%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 60%;
+		max-width: 960px;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		justify-content: center;
+		align-content: flex-start;
+		gap: 1rem;
+	}
+
+	.nodes-container .node-item {
+		position: relative;
+		margin-block: 0.1rem;
+		top: 0;
+		left: 0;
+		width: calc(45% - 3.5rem);
+		height: fit-content;
+		min-width: 200px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+
+	.nodes-container .node-item div:first-child {
+		position: relative;
+		padding-inline: 0.5rem;
+		top: 0;
+		left: 0;
+		width: fit-content;
+		height: fit-content;
+		max-width: 100%;
+		color: rgb(117, 224, 240);
+		font-size: clamp(0.8rem, 5vw, 1.2rem);
+		font-family: AileronLight;
+		text-align: center;
+		transition: color 0.4s linear, border-color 0.4s linear;
+		border-inline: 0.2rem solid transparent;
+	}
+
+	.nodes-container .node-item div:first-child input {
+		-webkit-appearance: none;
+		appearance: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.nodes-container .node-item div:first-child:has( input:checked) {
+		color: rgb(255, 102, 184);
+		border-color: rgb(255, 102, 184);
+	}
+
+	.nodes-container .node-item div:last-child {
+		position: fixed;
+		padding: 1rem;
+		top: 0;
+		left: 0;
+		width: calc(100vw - var(--left-nav-size));
+		height: 40vh;
+		pointer-events: none;
+		color: var(--text-v1);
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		opacity: 0;
+		transition: opacity 0.2s linear;
+		font-size: clamp(1rem, 8vw, 1.5rem);
+		text-align: center;
+		font-family: AileronRegular;
+	}
+
+	.nodes-container .node-item:has( input:checked) div:last-child {
+		opacity: 1;
+	}
+}
